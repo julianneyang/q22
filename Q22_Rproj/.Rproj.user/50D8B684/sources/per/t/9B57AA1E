@@ -1,0 +1,24 @@
+{
+    "id": "9B57AA1E",
+    "path": "~/JCYang/pdbehavior/Rscripts/SMT/SMT_FP_output.R",
+    "project_path": null,
+    "type": "r_source",
+    "hash": "2013348920",
+    "contents": "",
+    "dirty": false,
+    "created": 1686947555057.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "cursorPosition": "166,0",
+        "scrollLine": "150"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1687022933,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1687022933653,
+    "read_only": false,
+    "read_only_alternatives": []
+}
