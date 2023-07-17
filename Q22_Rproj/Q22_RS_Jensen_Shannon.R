@@ -111,7 +111,7 @@ target == row.names(metadata)
 data.dist <- as.dist(as(data.dist, "matrix"))
 
 set.seed(11)
-data.adonis=adonis(data.dist ~ Litter+ Sex + Q22, data=metadata, permutations=10000)
+data.adonis=adonis(data.dist ~ Sex + Q22, data=metadata, permutations=10000)
 data.adonis$aov.tab
 
 # Luminal Colon -- no HET 
