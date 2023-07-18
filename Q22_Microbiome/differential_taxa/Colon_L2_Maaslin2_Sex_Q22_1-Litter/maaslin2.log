@@ -1,0 +1,47 @@
+2023-07-17 17:22:14 INFO::Writing function arguments to log file
+2023-07-17 17:22:14 DEBUG::Function arguments
+2023-07-17 17:22:14 DEBUG::Output folder: Q22_Microbiome/differential_taxa/Colon_L2_Maaslin2_Sex_Q22_1-Litter
+2023-07-17 17:22:14 DEBUG::Min Abundance: 0.000000
+2023-07-17 17:22:14 DEBUG::Min Prevalence: 0.150000
+2023-07-17 17:22:14 DEBUG::Normalization: TSS
+2023-07-17 17:22:14 DEBUG::Transform: LOG
+2023-07-17 17:22:14 DEBUG::Analysis method: LM
+2023-07-17 17:22:14 DEBUG::Max significance: 0.250000
+2023-07-17 17:22:14 DEBUG::Random effects: Litter
+2023-07-17 17:22:14 DEBUG::Fixed effects: Sex,Q22
+2023-07-17 17:22:14 DEBUG::Correction method: BH
+2023-07-17 17:22:14 DEBUG::Standardize: TRUE
+2023-07-17 17:22:14 DEBUG::Cores: 1
+2023-07-17 17:22:14 INFO::Verifying options selected are valid
+2023-07-17 17:22:14 INFO::Determining format of input files
+2023-07-17 17:22:14 INFO::Input format is data samples as columns and metadata samples as rows
+2023-07-17 17:22:14 DEBUG::Transformed data so samples are rows
+2023-07-17 17:22:14 DEBUG::A total of 28 samples were found in both the data and metadata
+2023-07-17 17:22:14 DEBUG::Reordering data/metadata to use same sample ordering
+2023-07-17 17:22:14 INFO::Formula for random effects: expr ~ (1 | Litter)
+2023-07-17 17:22:14 INFO::Formula for fixed effects: expr ~  Sex + Q22
+2023-07-17 17:22:14 INFO::Filter data based on min abundance and min prevalence
+2023-07-17 17:22:14 INFO::Total samples in data: 28
+2023-07-17 17:22:14 INFO::Min samples required with min abundance for a feature not to be filtered: 4.200000
+2023-07-17 17:22:14 INFO::Total filtered features: 3
+2023-07-17 17:22:14 INFO::Filtered feature names from abundance and prevalence filtering: k__Bacteria.p__Deinococcota, k__Bacteria.p__Bdellovibrionota, k__Eukaryota.p__
+2023-07-17 17:22:14 INFO::Total filtered features with variance filtering: 0
+2023-07-17 17:22:14 INFO::Filtered feature names from variance filtering:
+2023-07-17 17:22:14 INFO::Running selected normalization method: TSS
+2023-07-17 17:22:14 INFO::Applying z-score to standardize continuous metadata
+2023-07-17 17:22:14 INFO::Running selected transform method: LOG
+2023-07-17 17:22:14 INFO::Running selected analysis method: LM
+2023-07-17 17:22:14 INFO::Fitting model to feature number 1, k__Bacteria.p__Firmicutes
+2023-07-17 17:22:15 INFO::Fitting model to feature number 2, k__Bacteria.p__Bacteroidota
+2023-07-17 17:22:15 INFO::Fitting model to feature number 3, k__Bacteria.p__Desulfobacterota
+2023-07-17 17:22:15 INFO::Fitting model to feature number 4, k__Bacteria.p__Actinobacteriota
+2023-07-17 17:22:15 INFO::Fitting model to feature number 5, k__Bacteria.p__Verrucomicrobiota
+2023-07-17 17:22:15 INFO::Fitting model to feature number 6, k__Bacteria.p__Proteobacteria
+2023-07-17 17:22:15 INFO::Fitting model to feature number 7, k__Bacteria.p__Cyanobacteria
+2023-07-17 17:22:15 INFO::Fitting model to feature number 8, k__Bacteria.p__
+2023-07-17 17:22:15 INFO::Counting total values for each feature
+2023-07-17 17:22:15 INFO::Writing residuals to file Q22_Microbiome/differential_taxa/Colon_L2_Maaslin2_Sex_Q22_1-Litter/residuals.rds
+2023-07-17 17:22:15 INFO::Writing fitted values to file Q22_Microbiome/differential_taxa/Colon_L2_Maaslin2_Sex_Q22_1-Litter/fitted.rds
+2023-07-17 17:22:15 INFO::Writing extracted random effects to file Q22_Microbiome/differential_taxa/Colon_L2_Maaslin2_Sex_Q22_1-Litter/ranef.rds
+2023-07-17 17:22:15 INFO::Writing all results to file (ordered by increasing q-values): Q22_Microbiome/differential_taxa/Colon_L2_Maaslin2_Sex_Q22_1-Litter/all_results.tsv
+2023-07-17 17:22:15 INFO::Writing the significant results (those which are less than or equal to the threshold of 0.250000 ) to file (ordered by increasing q-values): Q22_Microbiome/differential_taxa/Colon_L2_Maaslin2_Sex_Q22_1-Litter/significant_results.tsv

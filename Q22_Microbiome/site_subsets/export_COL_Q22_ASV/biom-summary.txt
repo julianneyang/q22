@@ -1,0 +1,43 @@
+Num samples: 28
+Num observations: 1,710
+Total count: 305,725
+Table density (fraction of non-zero values): 0.096
+
+Counts/sample summary:
+ Min: 3,372.000
+ Max: 20,799.000
+ Median: 9,882.500
+ Mean: 10,918.750
+ Std. dev.: 4,152.153
+ Sample Metadata Categories: None provided
+ Observation Metadata Categories: None provided
+
+Counts/sample detail:
+782: 3,372.000
+408: 4,660.000
+569: 5,091.000
+970-COL: 6,354.000
+109: 6,732.000
+750: 7,982.000
+411: 8,180.000
+749: 8,990.000
+681: 9,006.000
+828-COL: 9,043.000
+968-COL: 9,389.000
+561: 9,524.000
+825-COL: 9,654.000
+708: 9,872.000
+732: 9,893.000
+741: 10,570.000
+850-COL: 10,827.000
+690: 12,004.000
+570: 12,167.000
+675: 12,872.000
+747: 13,025.000
+786: 13,909.000
+865-FP-COL: 14,258.000
+868-FP-COL: 15,714.000
+814-COL: 16,119.000
+704: 16,444.000
+729: 19,275.000
+781: 20,799.000
