@@ -63,46 +63,51 @@ generate_adiv_plots <- function(input_data, X, Y, min, max){
 ### Make and store plots ---
 compare <-c("WT","KO")
 
-adiv_trios_shannon<- generate_adiv_plots(data_meta, Q22, shannon_entropy, 2, 7) +
+adiv_colon_shannon<- generate_adiv_plots(colon_data_meta, Q22, shannon_entropy, 2, 7) +
   stat_compare_means(comparisons = compare,method="wilcox", vjust=0.3,label="p.signif",step.increase=0.05)+
-  ggtitle("Shannon")+
+  ggtitle("Colon")+
+  xlab("")+
   theme(plot.title = element_text(hjust = 0.5))
-adiv_trios_shannon
+adiv_colon_shannon
 
-adiv_trios_otus<- generate_adiv_plots(data_meta, Q22, observed_features, 0, 300) +
+adiv_colon_otus<- generate_adiv_plots(colon_data_meta, Q22, observed_features, 0, 300) +
   stat_compare_means(comparisons = compare,method="wilcox", vjust=0.3,label="p.signif",step.increase=0.05)+
-  ggtitle("# ASVs")+
+  ggtitle("Colon")+
+  xlab("")+
   theme(plot.title = element_text(hjust = 0.5))
-adiv_trios_otus
+adiv_colon_otus
 
-adiv_trios_chao1<- generate_adiv_plots(data_meta, Q22, chao1, 0, 300) +
+adiv_colon_chao1<- generate_adiv_plots(colon_data_meta, Q22, chao1, 0, 300) +
   stat_compare_means(comparisons = compare,method="wilcox", vjust=0.3,label="p.signif",step.increase=0.05)+
   ggtitle("chao1")+
+  xlab("")+
   theme(plot.title = element_text(hjust = 0.5))
-adiv_trios_chao1
+adiv_colon_chao1
 
 
 plot_grid(adiv_trios_shannon, adiv_trios_otus, adiv_trios_chao1, labels=c("A","B","C"),nrow=1)
 
-adiv_trios_shannon<- generate_adiv_plots(ileum_data_meta, Q22, shannon_entropy, 2, 7) +
+adiv_ileum_shannon<- generate_adiv_plots(ileum_data_meta, Q22, shannon_entropy, 2, 7) +
   stat_compare_means(comparisons = compare,method="wilcox", vjust=0.3,label="p.signif",step.increase=0.05)+
-  ggtitle("Shannon")+
+  ggtitle("Ileum")+
+  xlab("")+
   theme(plot.title = element_text(hjust = 0.5))
-adiv_trios_shannon
+adiv_ileum_shannon
 
-adiv_trios_otus<- generate_adiv_plots(ileum_data_meta, Q22, observed_features, 0, 300) +
+adiv_ileum_otus<- generate_adiv_plots(ileum_data_meta, Q22, observed_features, 0, 300) +
   stat_compare_means(comparisons = compare,method="wilcox", vjust=0.3,label="p.signif",step.increase=0.05)+
-  ggtitle("# ASVs")+
+  ggtitle("Ileum")+
+  xlab("")+
   theme(plot.title = element_text(hjust = 0.5))
-adiv_trios_otus
+adiv_ileum_otus
 
-adiv_trios_chao1<- generate_adiv_plots(ileum_data_meta, Q22, chao1, 0, 300) +
+adiv_ileum_chao1<- generate_adiv_plots(ileum_data_meta, Q22, chao1, 0, 300) +
   stat_compare_means(comparisons = compare,method="wilcox", vjust=0.3,label="p.signif",step.increase=0.05)+
   ggtitle("chao1")+
   theme(plot.title = element_text(hjust = 0.5))
-adiv_trios_chao1
+adiv_ileum_chao1
 
-plot_grid(adiv_trios_shannon, adiv_trios_otus, adiv_trios_chao1, labels=c("A","B","C"), nrow=1)
+plot_grid(adiv_ileum_shannon, adiv_ileum_otus, adiv_ileum_chao1, labels=c("A","B","C"), nrow=1)
 
 ### Alpha Diversity Stats ---
 data_meta$Genotype <-factor(data_meta$Genotype, levels=c("WT", "HET","MUT"))

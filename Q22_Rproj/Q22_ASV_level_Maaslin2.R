@@ -105,7 +105,7 @@ data<-read.table("Q22_Microbiome/differential_taxa/Ileum_ASV_Maaslin2_Sex_Q22_1-
 data <- data %>% filter(qval <0.05) %>% filter(metadata=="Q22")
 
 data<- (merge(data, annotation, by = 'feature'))
-print(data$taxonomy)
+print(data$feature)
 write.csv(data, "Q22_Microbiome/differential_taxa/Ileum_ASV_Maaslin2_Sex_Q22_1-Litter/annotated_significant_results.csv")
 
 
