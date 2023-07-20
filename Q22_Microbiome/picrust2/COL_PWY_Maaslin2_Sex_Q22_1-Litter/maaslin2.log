@@ -1,0 +1,314 @@
+2023-07-19 22:02:30 INFO::Writing function arguments to log file
+2023-07-19 22:02:30 DEBUG::Function arguments
+2023-07-19 22:02:30 DEBUG::Output folder: Q22_Microbiome/picrust2/COL_PWY_Maaslin2_Sex_Q22_1-Litter
+2023-07-19 22:02:30 DEBUG::Min Abundance: 0.000000
+2023-07-19 22:02:30 DEBUG::Min Prevalence: 0.150000
+2023-07-19 22:02:30 DEBUG::Normalization: TSS
+2023-07-19 22:02:30 DEBUG::Transform: LOG
+2023-07-19 22:02:30 DEBUG::Analysis method: LM
+2023-07-19 22:02:30 DEBUG::Max significance: 0.250000
+2023-07-19 22:02:30 DEBUG::Random effects: Litter
+2023-07-19 22:02:30 DEBUG::Fixed effects: Sex,Q22
+2023-07-19 22:02:30 DEBUG::Correction method: BH
+2023-07-19 22:02:30 DEBUG::Standardize: TRUE
+2023-07-19 22:02:30 DEBUG::Cores: 1
+2023-07-19 22:02:30 INFO::Verifying options selected are valid
+2023-07-19 22:02:30 INFO::Determining format of input files
+2023-07-19 22:02:30 INFO::Input format is data samples as columns and metadata samples as rows
+2023-07-19 22:02:30 DEBUG::Transformed data so samples are rows
+2023-07-19 22:02:30 DEBUG::A total of 28 samples were found in both the data and metadata
+2023-07-19 22:02:30 DEBUG::Reordering data/metadata to use same sample ordering
+2023-07-19 22:02:30 INFO::Formula for random effects: expr ~ (1 | Litter)
+2023-07-19 22:02:30 INFO::Formula for fixed effects: expr ~  Sex + Q22
+2023-07-19 22:02:30 INFO::Filter data based on min abundance and min prevalence
+2023-07-19 22:02:30 INFO::Total samples in data: 28
+2023-07-19 22:02:30 INFO::Min samples required with min abundance for a feature not to be filtered: 4.200000
+2023-07-19 22:02:30 INFO::Total filtered features: 107
+2023-07-19 22:02:30 INFO::Filtered feature names from abundance and prevalence filtering: X3.HYDROXYPHENYLACETATE.DEGRADATION.PWY, AEROBACTINSYN.PWY, ALL.CHORISMATE.PWY, ARGDEG.PWY, AST.PWY, CATECHOL.ORTHO.CLEAVAGE.PWY, CHLOROPHYLL.SYN, CRNFORCAT.PWY, DENITRIFICATION.PWY, DHGLUCONATE.PYR.CAT.PWY, ECASYN.PWY, ENTBACSYN.PWY, GALLATE.DEGRADATION.I.PWY, GALLATE.DEGRADATION.II.PWY, HCAMHPDEG.PWY, KDO.NAGLIPASYN.PWY, KETOGLUCONMET.PWY, METHGLYUT.PWY, METHYLGALLATE.DEGRADATION.PWY, NADSYN.PWY, ORNARGDEG.PWY, ORNDEG.PWY, P101.PWY, P184.PWY, P221.PWY, P241.PWY, P261.PWY, P281.PWY, P381.PWY, P621.PWY, PROTOCATECHUATE.ORTHO.CLEAVAGE.PWY, PWY.1361, PWY.1501, PWY.1541, PWY.1622, PWY.181, PWY.3661, PWY.4361, PWY.4722, PWY.5005, PWY.5028, PWY.5088, PWY.5178, PWY.5180, PWY.5181, PWY.5182, PWY.5183, PWY.5198, PWY.5415, PWY.5417, PWY.5419, PWY.5420, PWY.5430, PWY.5431, PWY.5499, PWY.5507, PWY.5529, PWY.5531, PWY.5647, PWY.5651, PWY.5654, PWY.5655, PWY.5656, PWY.5850, PWY.5860, PWY.5896, PWY.5941, PWY.6071, PWY.6107, PWY.6165, PWY.6182, PWY.6185, PWY.6210, PWY.6338, PWY.6339, PWY.6383, PWY.6397, PWY.6505, PWY.6562, PWY.6629, PWY.6641, PWY.6660, PWY.6662, PWY.6690, PWY.6713, PWY.6728, PWY.6876, PWY.6906, PWY.6944, PWY.6957, PWY.7007, PWY.7097, PWY.7098, PWY.7159, PWY.722, PWY.7255, PWY.7376, PWY.7391, PWY.7446, PWY.7527, PWY.7616, PWY0.1277, PWY0.1338, PWY0.321, PWY0.42, PWY1G.0, THREOCAT.PWY
+2023-07-19 22:02:30 INFO::Total filtered features with variance filtering: 0
+2023-07-19 22:02:30 INFO::Filtered feature names from variance filtering:
+2023-07-19 22:02:30 INFO::Running selected normalization method: TSS
+2023-07-19 22:02:30 INFO::Applying z-score to standardize continuous metadata
+2023-07-19 22:02:30 INFO::Running selected transform method: LOG
+2023-07-19 22:02:31 INFO::Running selected analysis method: LM
+2023-07-19 22:02:31 INFO::Fitting model to feature number 1, X1CMET2.PWY
+2023-07-19 22:02:31 INFO::Fitting model to feature number 2, ANAEROFRUCAT.PWY
+2023-07-19 22:02:31 INFO::Fitting model to feature number 3, ANAGLYCOLYSIS.PWY
+2023-07-19 22:02:31 INFO::Fitting model to feature number 4, ARG.POLYAMINE.SYN
+2023-07-19 22:02:31 INFO::Fitting model to feature number 5, ARGORNPROST.PWY
+2023-07-19 22:02:31 INFO::Fitting model to feature number 6, ARGSYN.PWY
+2023-07-19 22:02:31 INFO::Fitting model to feature number 7, ARGSYNBSUB.PWY
+2023-07-19 22:02:31 INFO::Fitting model to feature number 8, ARO.PWY
+2023-07-19 22:02:31 INFO::Fitting model to feature number 9, ASPASN.PWY
+2023-07-19 22:02:31 INFO::Fitting model to feature number 10, BIOTIN.BIOSYNTHESIS.PWY
+2023-07-19 22:02:31 INFO::Fitting model to feature number 11, BRANCHED.CHAIN.AA.SYN.PWY
+2023-07-19 22:02:31 INFO::Fitting model to feature number 12, CALVIN.PWY
+2023-07-19 22:02:31 INFO::Fitting model to feature number 13, CENTFERM.PWY
+2023-07-19 22:02:31 INFO::Fitting model to feature number 14, COA.PWY
+2023-07-19 22:02:31 INFO::Fitting model to feature number 15, COBALSYN.PWY
+2023-07-19 22:02:31 INFO::Fitting model to feature number 16, CODH.PWY
+2023-07-19 22:02:32 INFO::Fitting model to feature number 17, COLANSYN.PWY
+2023-07-19 22:02:32 INFO::Fitting model to feature number 18, COMPLETE.ARO.PWY
+2023-07-19 22:02:32 INFO::Fitting model to feature number 19, DAPLYSINESYN.PWY
+2023-07-19 22:02:32 INFO::Fitting model to feature number 20, DENOVOPURINE2.PWY
+2023-07-19 22:02:32 INFO::Fitting model to feature number 21, DTDPRHAMSYN.PWY
+2023-07-19 22:02:32 INFO::Fitting model to feature number 22, FAO.PWY
+2023-07-19 22:02:32 INFO::Fitting model to feature number 23, FASYN.ELONG.PWY
+2023-07-19 22:02:32 INFO::Fitting model to feature number 24, FASYN.INITIAL.PWY
+2023-07-19 22:02:32 INFO::Fitting model to feature number 25, FERMENTATION.PWY
+2023-07-19 22:02:32 INFO::Fitting model to feature number 26, FOLSYN.PWY
+2023-07-19 22:02:32 INFO::Fitting model to feature number 27, FUC.RHAMCAT.PWY
+2023-07-19 22:02:32 INFO::Fitting model to feature number 28, FUCCAT.PWY
+2023-07-19 22:02:32 INFO::Fitting model to feature number 29, GALACT.GLUCUROCAT.PWY
+2023-07-19 22:02:32 INFO::Fitting model to feature number 30, GALACTARDEG.PWY
+2023-07-19 22:02:33 INFO::Fitting model to feature number 31, GALACTUROCAT.PWY
+2023-07-19 22:02:33 INFO::Fitting model to feature number 32, GLCMANNANAUT.PWY
+2023-07-19 22:02:33 INFO::Fitting model to feature number 33, GLUCARDEG.PWY
+2023-07-19 22:02:33 INFO::Fitting model to feature number 34, GLUCARGALACTSUPER.PWY
+2023-07-19 22:02:33 INFO::Fitting model to feature number 35, GLUCONEO.PWY
+2023-07-19 22:02:33 INFO::Fitting model to feature number 36, GLUCOSE1PMETAB.PWY
+2023-07-19 22:02:33 INFO::Fitting model to feature number 37, GLUCUROCAT.PWY
+2023-07-19 22:02:33 INFO::Fitting model to feature number 38, GLUTORN.PWY
+2023-07-19 22:02:33 INFO::Fitting model to feature number 39, GLYCOCAT.PWY
+2023-07-19 22:02:34 INFO::Fitting model to feature number 40, GLYCOGENSYNTH.PWY
+2023-07-19 22:02:34 INFO::Fitting model to feature number 41, GLYCOL.GLYOXDEG.PWY
+2023-07-19 22:02:34 INFO::Fitting model to feature number 42, GLYCOLYSIS
+2023-07-19 22:02:34 INFO::Fitting model to feature number 43, GLYCOLYSIS.E.D
+2023-07-19 22:02:34 INFO::Fitting model to feature number 44, GLYCOLYSIS.TCA.GLYOX.BYPASS
+2023-07-19 22:02:34 INFO::Fitting model to feature number 45, GLYOXYLATE.BYPASS
+2023-07-19 22:02:34 INFO::Fitting model to feature number 46, GOLPDLCAT.PWY
+2023-07-19 22:02:34 INFO::Fitting model to feature number 47, HEME.BIOSYNTHESIS.II
+2023-07-19 22:02:34 INFO::Fitting model to feature number 48, HEMESYN2.PWY
+2023-07-19 22:02:34 INFO::Fitting model to feature number 49, HEXITOLDEGSUPER.PWY
+2023-07-19 22:02:34 INFO::Fitting model to feature number 50, HISDEG.PWY
+2023-07-19 22:02:34 INFO::Fitting model to feature number 51, HISTSYN.PWY
+2023-07-19 22:02:34 INFO::Fitting model to feature number 52, HOMOSER.METSYN.PWY
+2023-07-19 22:02:35 INFO::Fitting model to feature number 53, HSERMETANA.PWY
+2023-07-19 22:02:35 INFO::Fitting model to feature number 54, ILEUSYN.PWY
+2023-07-19 22:02:35 INFO::Fitting model to feature number 55, LACTOSECAT.PWY
+2023-07-19 22:02:35 INFO::Fitting model to feature number 56, LEU.DEG2.PWY
+2023-07-19 22:02:35 INFO::Fitting model to feature number 57, MET.SAM.PWY
+2023-07-19 22:02:35 INFO::Fitting model to feature number 58, METH.ACETATE.PWY
+2023-07-19 22:02:35 INFO::Fitting model to feature number 59, NAD.BIOSYNTHESIS.II
+2023-07-19 22:02:35 INFO::Fitting model to feature number 60, NAGLIPASYN.PWY
+2023-07-19 22:02:35 INFO::Fitting model to feature number 61, NONMEVIPP.PWY
+2023-07-19 22:02:35 INFO::Fitting model to feature number 62, NONOXIPENT.PWY
+2023-07-19 22:02:35 INFO::Fitting model to feature number 63, OANTIGEN.PWY
+2023-07-19 22:02:35 INFO::Fitting model to feature number 64, P105.PWY
+2023-07-19 22:02:35 INFO::Fitting model to feature number 65, P108.PWY
+2023-07-19 22:02:35 INFO::Fitting model to feature number 66, P122.PWY
+2023-07-19 22:02:35 INFO::Fitting model to feature number 67, P124.PWY
+2023-07-19 22:02:35 INFO::Fitting model to feature number 68, P125.PWY
+2023-07-19 22:02:36 INFO::Fitting model to feature number 69, P161.PWY
+2023-07-19 22:02:36 INFO::Fitting model to feature number 70, P162.PWY
+2023-07-19 22:02:36 INFO::Fitting model to feature number 71, P163.PWY
+2023-07-19 22:02:36 INFO::Fitting model to feature number 72, P164.PWY
+2023-07-19 22:02:36 INFO::Fitting model to feature number 73, P23.PWY
+2023-07-19 22:02:36 INFO::Fitting model to feature number 74, P341.PWY
+2023-07-19 22:02:36 INFO::Fitting model to feature number 75, P4.PWY
+2023-07-19 22:02:36 INFO::Fitting model to feature number 76, P42.PWY
+2023-07-19 22:02:36 INFO::Fitting model to feature number 77, P441.PWY
+2023-07-19 22:02:36 INFO::Fitting model to feature number 78, P461.PWY
+2023-07-19 22:02:36 INFO::Fitting model to feature number 79, P562.PWY
+2023-07-19 22:02:36 INFO::Fitting model to feature number 80, PANTO.PWY
+2023-07-19 22:02:36 INFO::Fitting model to feature number 81, PANTOSYN.PWY
+2023-07-19 22:02:36 INFO::Fitting model to feature number 82, PENTOSE.P.PWY
+2023-07-19 22:02:36 INFO::Fitting model to feature number 83, PEPTIDOGLYCANSYN.PWY
+2023-07-19 22:02:37 INFO::Fitting model to feature number 84, PHOSLIPSYN.PWY
+2023-07-19 22:02:37 INFO::Fitting model to feature number 85, POLYAMINSYN3.PWY
+2023-07-19 22:02:37 INFO::Fitting model to feature number 86, POLYAMSYN.PWY
+2023-07-19 22:02:37 INFO::Fitting model to feature number 87, POLYISOPRENSYN.PWY
+2023-07-19 22:02:37 INFO::Fitting model to feature number 88, PPGPPMET.PWY
+2023-07-19 22:02:37 INFO::Fitting model to feature number 89, PRPP.PWY
+2023-07-19 22:02:37 INFO::Fitting model to feature number 90, PWY.1269
+2023-07-19 22:02:37 INFO::Fitting model to feature number 91, PWY.1861
+2023-07-19 22:02:37 INFO::Fitting model to feature number 92, PWY.2941
+2023-07-19 22:02:37 INFO::Fitting model to feature number 93, PWY.2942
+2023-07-19 22:02:37 INFO::Fitting model to feature number 94, PWY.3001
+2023-07-19 22:02:37 INFO::Fitting model to feature number 95, PWY.3781
+2023-07-19 22:02:37 INFO::Fitting model to feature number 96, PWY.4984
+2023-07-19 22:02:37 INFO::Fitting model to feature number 97, PWY.5022
+2023-07-19 22:02:37 INFO::Fitting model to feature number 98, PWY.5097
+2023-07-19 22:02:37 INFO::Fitting model to feature number 99, PWY.5100
+2023-07-19 22:02:38 INFO::Fitting model to feature number 100, PWY.5101
+2023-07-19 22:02:38 INFO::Fitting model to feature number 101, PWY.5103
+2023-07-19 22:02:38 INFO::Fitting model to feature number 102, PWY.5104
+2023-07-19 22:02:38 INFO::Fitting model to feature number 103, PWY.5121
+2023-07-19 22:02:38 INFO::Fitting model to feature number 104, PWY.5154
+2023-07-19 22:02:38 INFO::Fitting model to feature number 105, PWY.5177
+2023-07-19 22:02:38 INFO::Fitting model to feature number 106, PWY.5188
+2023-07-19 22:02:38 INFO::Fitting model to feature number 107, PWY.5189
+2023-07-19 22:02:38 INFO::Fitting model to feature number 108, PWY.5265
+2023-07-19 22:02:38 INFO::Fitting model to feature number 109, PWY.5304
+2023-07-19 22:02:38 INFO::Fitting model to feature number 110, PWY.5345
+2023-07-19 22:02:38 INFO::Fitting model to feature number 111, PWY.5347
+2023-07-19 22:02:38 INFO::Fitting model to feature number 112, PWY.5384
+2023-07-19 22:02:38 INFO::Fitting model to feature number 113, PWY.5484
+2023-07-19 22:02:38 INFO::Fitting model to feature number 114, PWY.5505
+2023-07-19 22:02:38 INFO::Fitting model to feature number 115, PWY.5509
+2023-07-19 22:02:39 INFO::Fitting model to feature number 116, PWY.5532
+2023-07-19 22:02:39 INFO::Fitting model to feature number 117, PWY.5659
+2023-07-19 22:02:39 INFO::Fitting model to feature number 118, PWY.5667
+2023-07-19 22:02:39 INFO::Fitting model to feature number 119, PWY.5676
+2023-07-19 22:02:39 INFO::Fitting model to feature number 120, PWY.5677
+2023-07-19 22:02:39 INFO::Fitting model to feature number 121, PWY.5686
+2023-07-19 22:02:39 INFO::Fitting model to feature number 122, PWY.5695
+2023-07-19 22:02:39 INFO::Fitting model to feature number 123, PWY.5705
+2023-07-19 22:02:39 INFO::Fitting model to feature number 124, PWY.5741
+2023-07-19 22:02:39 INFO::Fitting model to feature number 125, PWY.5747
+2023-07-19 22:02:39 INFO::Fitting model to feature number 126, PWY.5837
+2023-07-19 22:02:39 INFO::Fitting model to feature number 127, PWY.5838
+2023-07-19 22:02:39 INFO::Fitting model to feature number 128, PWY.5840
+2023-07-19 22:02:39 INFO::Fitting model to feature number 129, PWY.5845
+2023-07-19 22:02:39 INFO::Fitting model to feature number 130, PWY.5855
+2023-07-19 22:02:39 INFO::Fitting model to feature number 131, PWY.5856
+2023-07-19 22:02:40 INFO::Fitting model to feature number 132, PWY.5857
+2023-07-19 22:02:40 INFO::Fitting model to feature number 133, PWY.5861
+2023-07-19 22:02:40 INFO::Fitting model to feature number 134, PWY.5862
+2023-07-19 22:02:40 INFO::Fitting model to feature number 135, PWY.5863
+2023-07-19 22:02:40 INFO::Fitting model to feature number 136, PWY.5897
+2023-07-19 22:02:40 INFO::Fitting model to feature number 137, PWY.5898
+2023-07-19 22:02:40 INFO::Fitting model to feature number 138, PWY.5899
+2023-07-19 22:02:40 INFO::Fitting model to feature number 139, PWY.5910
+2023-07-19 22:02:40 INFO::Fitting model to feature number 140, PWY.5913
+2023-07-19 22:02:40 INFO::Fitting model to feature number 141, PWY.5918
+2023-07-19 22:02:41 INFO::Fitting model to feature number 142, PWY.5920
+2023-07-19 22:02:41 INFO::Fitting model to feature number 143, PWY.5971
+2023-07-19 22:02:41 INFO::Fitting model to feature number 144, PWY.5973
+2023-07-19 22:02:41 INFO::Fitting model to feature number 145, PWY.5989
+2023-07-19 22:02:41 INFO::Fitting model to feature number 146, PWY.6121
+2023-07-19 22:02:41 INFO::Fitting model to feature number 147, PWY.6122
+2023-07-19 22:02:41 INFO::Fitting model to feature number 148, PWY.6123
+2023-07-19 22:02:41 INFO::Fitting model to feature number 149, PWY.6125
+2023-07-19 22:02:41 INFO::Fitting model to feature number 150, PWY.6126
+2023-07-19 22:02:41 INFO::Fitting model to feature number 151, PWY.6147
+2023-07-19 22:02:41 INFO::Fitting model to feature number 152, PWY.6151
+2023-07-19 22:02:42 INFO::Fitting model to feature number 153, PWY.6163
+2023-07-19 22:02:42 INFO::Fitting model to feature number 154, PWY.621
+2023-07-19 22:02:42 INFO::Fitting model to feature number 155, PWY.6263
+2023-07-19 22:02:42 INFO::Fitting model to feature number 156, PWY.6269
+2023-07-19 22:02:42 INFO::Fitting model to feature number 157, PWY.6277
+2023-07-19 22:02:42 INFO::Fitting model to feature number 158, PWY.6282
+2023-07-19 22:02:42 INFO::Fitting model to feature number 159, PWY.6317
+2023-07-19 22:02:42 INFO::Fitting model to feature number 160, PWY.6353
+2023-07-19 22:02:42 INFO::Fitting model to feature number 161, PWY.6385
+2023-07-19 22:02:42 INFO::Fitting model to feature number 162, PWY.6386
+2023-07-19 22:02:42 INFO::Fitting model to feature number 163, PWY.6387
+2023-07-19 22:02:42 INFO::Fitting model to feature number 164, PWY.6396
+2023-07-19 22:02:42 INFO::Fitting model to feature number 165, PWY.6467
+2023-07-19 22:02:43 INFO::Fitting model to feature number 166, PWY.6470
+2023-07-19 22:02:43 INFO::Fitting model to feature number 167, PWY.6471
+2023-07-19 22:02:43 INFO::Fitting model to feature number 168, PWY.6478
+2023-07-19 22:02:43 INFO::Fitting model to feature number 169, PWY.6507
+2023-07-19 22:02:43 INFO::Fitting model to feature number 170, PWY.6519
+2023-07-19 22:02:43 INFO::Fitting model to feature number 171, PWY.6545
+2023-07-19 22:02:43 INFO::Fitting model to feature number 172, PWY.6572
+2023-07-19 22:02:43 INFO::Fitting model to feature number 173, PWY.6588
+2023-07-19 22:02:43 INFO::Fitting model to feature number 174, PWY.6590
+2023-07-19 22:02:43 INFO::Fitting model to feature number 175, PWY.6608
+2023-07-19 22:02:43 INFO::Fitting model to feature number 176, PWY.6609
+2023-07-19 22:02:43 INFO::Fitting model to feature number 177, PWY.6612
+2023-07-19 22:02:43 INFO::Fitting model to feature number 178, PWY.6628
+2023-07-19 22:02:43 INFO::Fitting model to feature number 179, PWY.6630
+2023-07-19 22:02:43 INFO::Fitting model to feature number 180, PWY.6700
+2023-07-19 22:02:43 INFO::Fitting model to feature number 181, PWY.6703
+2023-07-19 22:02:43 INFO::Fitting model to feature number 182, PWY.6708
+2023-07-19 22:02:44 INFO::Fitting model to feature number 183, PWY.6737
+2023-07-19 22:02:44 INFO::Fitting model to feature number 184, PWY.6749
+2023-07-19 22:02:44 INFO::Fitting model to feature number 185, PWY.6891
+2023-07-19 22:02:44 INFO::Fitting model to feature number 186, PWY.6892
+2023-07-19 22:02:44 INFO::Fitting model to feature number 187, PWY.6895
+2023-07-19 22:02:44 INFO::Fitting model to feature number 188, PWY.6897
+2023-07-19 22:02:44 INFO::Fitting model to feature number 189, PWY.6901
+2023-07-19 22:02:44 INFO::Fitting model to feature number 190, PWY.6969
+2023-07-19 22:02:44 INFO::Fitting model to feature number 191, PWY.7003
+2023-07-19 22:02:44 INFO::Fitting model to feature number 192, PWY.7013
+2023-07-19 22:02:44 INFO::Fitting model to feature number 193, PWY.7090
+2023-07-19 22:02:44 INFO::Fitting model to feature number 194, PWY.7094
+2023-07-19 22:02:44 INFO::Fitting model to feature number 195, PWY.7111
+2023-07-19 22:02:45 INFO::Fitting model to feature number 196, PWY.7184
+2023-07-19 22:02:45 INFO::Fitting model to feature number 197, PWY.7187
+2023-07-19 22:02:45 INFO::Fitting model to feature number 198, PWY.7196
+2023-07-19 22:02:45 INFO::Fitting model to feature number 199, PWY.7197
+2023-07-19 22:02:45 INFO::Fitting model to feature number 200, PWY.7198
+2023-07-19 22:02:45 INFO::Fitting model to feature number 201, PWY.7199
+2023-07-19 22:02:45 INFO::Fitting model to feature number 202, PWY.7200
+2023-07-19 22:02:45 INFO::Fitting model to feature number 203, PWY.7208
+2023-07-19 22:02:45 INFO::Fitting model to feature number 204, PWY.7210
+2023-07-19 22:02:45 INFO::Fitting model to feature number 205, PWY.7211
+2023-07-19 22:02:45 INFO::Fitting model to feature number 206, PWY.7219
+2023-07-19 22:02:45 INFO::Fitting model to feature number 207, PWY.7220
+2023-07-19 22:02:45 INFO::Fitting model to feature number 208, PWY.7221
+2023-07-19 22:02:45 INFO::Fitting model to feature number 209, PWY.7222
+2023-07-19 22:02:45 INFO::Fitting model to feature number 210, PWY.7228
+2023-07-19 22:02:46 INFO::Fitting model to feature number 211, PWY.7229
+2023-07-19 22:02:46 INFO::Fitting model to feature number 212, PWY.7234
+2023-07-19 22:02:46 INFO::Fitting model to feature number 213, PWY.7237
+2023-07-19 22:02:46 INFO::Fitting model to feature number 214, PWY.7242
+2023-07-19 22:02:46 INFO::Fitting model to feature number 215, PWY.7254
+2023-07-19 22:02:46 INFO::Fitting model to feature number 216, PWY.7315
+2023-07-19 22:02:46 INFO::Fitting model to feature number 217, PWY.7323
+2023-07-19 22:02:46 INFO::Fitting model to feature number 218, PWY.7328
+2023-07-19 22:02:46 INFO::Fitting model to feature number 219, PWY.7332
+2023-07-19 22:02:46 INFO::Fitting model to feature number 220, PWY.7371
+2023-07-19 22:02:46 INFO::Fitting model to feature number 221, PWY.7374
+2023-07-19 22:02:46 INFO::Fitting model to feature number 222, PWY.7377
+2023-07-19 22:02:46 INFO::Fitting model to feature number 223, PWY.7392
+2023-07-19 22:02:47 INFO::Fitting model to feature number 224, PWY.7400
+2023-07-19 22:02:47 INFO::Fitting model to feature number 225, PWY.7431
+2023-07-19 22:02:47 INFO::Fitting model to feature number 226, PWY.7456
+2023-07-19 22:02:47 INFO::Fitting model to feature number 227, PWY.7539
+2023-07-19 22:02:47 INFO::Fitting model to feature number 228, PWY.7560
+2023-07-19 22:02:47 INFO::Fitting model to feature number 229, PWY.7663
+2023-07-19 22:02:47 INFO::Fitting model to feature number 230, PWY.7664
+2023-07-19 22:02:47 INFO::Fitting model to feature number 231, PWY.841
+2023-07-19 22:02:47 INFO::Fitting model to feature number 232, PWY.922
+2023-07-19 22:02:47 INFO::Fitting model to feature number 233, PWY0.1061
+2023-07-19 22:02:47 INFO::Fitting model to feature number 234, PWY0.1241
+2023-07-19 22:02:48 INFO::Fitting model to feature number 235, PWY0.1261
+2023-07-19 22:02:48 INFO::Fitting model to feature number 236, PWY0.1296
+2023-07-19 22:02:48 INFO::Fitting model to feature number 237, PWY0.1297
+2023-07-19 22:02:48 INFO::Fitting model to feature number 238, PWY0.1298
+2023-07-19 22:02:48 INFO::Fitting model to feature number 239, PWY0.1319
+2023-07-19 22:02:48 INFO::Fitting model to feature number 240, PWY0.1415
+2023-07-19 22:02:49 INFO::Fitting model to feature number 241, PWY0.1479
+2023-07-19 22:02:49 INFO::Fitting model to feature number 242, PWY0.1533
+2023-07-19 22:02:49 INFO::Fitting model to feature number 243, PWY0.1586
+2023-07-19 22:02:49 INFO::Fitting model to feature number 244, PWY0.162
+2023-07-19 22:02:49 INFO::Fitting model to feature number 245, PWY0.166
+2023-07-19 22:02:49 INFO::Fitting model to feature number 246, PWY0.41
+2023-07-19 22:02:49 INFO::Fitting model to feature number 247, PWY0.781
+2023-07-19 22:02:49 INFO::Fitting model to feature number 248, PWY0.845
+2023-07-19 22:02:49 INFO::Fitting model to feature number 249, PWY0.862
+2023-07-19 22:02:50 INFO::Fitting model to feature number 250, PWY490.3
+2023-07-19 22:02:50 INFO::Fitting model to feature number 251, PWY4FS.7
+2023-07-19 22:02:50 INFO::Fitting model to feature number 252, PWY4FS.8
+2023-07-19 22:02:50 INFO::Fitting model to feature number 253, PWYG.321
+2023-07-19 22:02:50 INFO::Fitting model to feature number 254, PYRIDNUCSAL.PWY
+2023-07-19 22:02:50 INFO::Fitting model to feature number 255, PYRIDNUCSYN.PWY
+2023-07-19 22:02:50 INFO::Fitting model to feature number 256, PYRIDOXSYN.PWY
+2023-07-19 22:02:50 INFO::Fitting model to feature number 257, REDCITCYC
+2023-07-19 22:02:50 INFO::Fitting model to feature number 258, RHAMCAT.PWY
+2023-07-19 22:02:50 INFO::Fitting model to feature number 259, RIBOSYN2.PWY
+2023-07-19 22:02:50 INFO::Fitting model to feature number 260, RUMP.PWY
+2023-07-19 22:02:50 INFO::Fitting model to feature number 261, SALVADEHYPOX.PWY
+2023-07-19 22:02:51 INFO::Fitting model to feature number 262, SER.GLYSYN.PWY
+2023-07-19 22:02:51 INFO::Fitting model to feature number 263, SO4ASSIM.PWY
+2023-07-19 22:02:51 INFO::Fitting model to feature number 264, SULFATE.CYS.PWY
+2023-07-19 22:02:51 INFO::Fitting model to feature number 265, TCA
+2023-07-19 22:02:51 INFO::Fitting model to feature number 266, TCA.GLYOX.BYPASS
+2023-07-19 22:02:51 INFO::Fitting model to feature number 267, TEICHOICACID.PWY
+2023-07-19 22:02:51 INFO::Fitting model to feature number 268, THISYN.PWY
+2023-07-19 22:02:51 INFO::Fitting model to feature number 269, THRESYN.PWY
+2023-07-19 22:02:51 INFO::Fitting model to feature number 270, TRNA.CHARGING.PWY
+2023-07-19 22:02:51 INFO::Fitting model to feature number 271, TRPSYN.PWY
+2023-07-19 22:02:51 INFO::Fitting model to feature number 272, TYRFUMCAT.PWY
+2023-07-19 22:02:51 INFO::Fitting model to feature number 273, UBISYN.PWY
+2023-07-19 22:02:52 INFO::Fitting model to feature number 274, UDPNAGSYN.PWY
+2023-07-19 22:02:52 INFO::Fitting model to feature number 275, VALSYN.PWY
+2023-07-19 22:02:52 INFO::Counting total values for each feature
+2023-07-19 22:02:52 INFO::Writing residuals to file Q22_Microbiome/picrust2/COL_PWY_Maaslin2_Sex_Q22_1-Litter/residuals.rds
+2023-07-19 22:02:52 INFO::Writing fitted values to file Q22_Microbiome/picrust2/COL_PWY_Maaslin2_Sex_Q22_1-Litter/fitted.rds
+2023-07-19 22:02:52 INFO::Writing extracted random effects to file Q22_Microbiome/picrust2/COL_PWY_Maaslin2_Sex_Q22_1-Litter/ranef.rds
+2023-07-19 22:02:52 INFO::Writing all results to file (ordered by increasing q-values): Q22_Microbiome/picrust2/COL_PWY_Maaslin2_Sex_Q22_1-Litter/all_results.tsv
+2023-07-19 22:02:52 INFO::Writing the significant results (those which are less than or equal to the threshold of 0.250000 ) to file (ordered by increasing q-values): Q22_Microbiome/picrust2/COL_PWY_Maaslin2_Sex_Q22_1-Litter/significant_results.tsv
