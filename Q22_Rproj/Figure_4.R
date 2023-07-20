@@ -4,6 +4,7 @@ library(cowplot)
 library(viridis)
 library(tidyr)
 library(dplyr)
+library(funrar)
 
 # Read in startle data 
 data<-read.csv("Q22_Behavior/Startle_PPI_Analysis - Analysis.csv", header=TRUE)
@@ -20,6 +21,7 @@ streptococcus <- significant_feature$feature
 metadata <- read.delim("Q22_Microbiome/starting_files/Q22_Metadata.tsv", header=TRUE)
 metadata$SampleID <- gsub("-",".",metadata$SampleID)
 metadata$SampleID <- paste0("X","", metadata$SampleID)
+metadata$Genotype <- revalue(metadata$Q22, replace = c("KO" = "Q22","WT"="WT"))
 counts <- read.delim("Q22_Microbiome/starting_files/Q22_ASV.tsv", header = TRUE,row.names=1)
 
 ileum_meta <- metadata %>% filter(Site=="ILE", SampleID %in% names(counts))
@@ -74,7 +76,7 @@ spearman_vs_first_startle <- ggplot(correlate_microbiome, aes(Streptococcus, Fir
   geom_point() +
   geom_smooth(method = "lm", se = FALSE, color = "blue") +
   labs(title = paste("First Startle"),
-       subtitle = paste(paste("correlation=", truncated_correlation), paste("p=", truncated_p_value))) + 
+       subtitle = paste(paste("r=", truncated_correlation), paste("p=", truncated_p_value))) + 
   ylab("Average VMax") +
   xlab("Relative Abundance") +
   theme_cowplot(12) +
@@ -92,7 +94,7 @@ spearman_vs_middle_startle <- ggplot(correlate_microbiome, aes(Streptococcus, mi
   geom_point() +
   geom_smooth(method = "lm", se = FALSE, color = "blue") +
   labs(title = paste("Middle Startle"),
-       subtitle = paste(paste("correlation=", truncated_correlation), paste("p=", truncated_p_value))) + 
+       subtitle = paste(paste("r=", truncated_correlation), paste("p=", truncated_p_value))) + 
   ylab("Average VMax") +
   xlab("Relative Abundance") +
   theme_cowplot(12) +
@@ -110,7 +112,7 @@ spearman_vs_last_startle <- ggplot(correlate_microbiome, aes(Streptococcus,last_
   geom_point() +
   geom_smooth(method = "lm", se = FALSE, color = "blue") +
   labs(title = paste("Last Startle"),
-       subtitle = paste(paste("correlation=", truncated_correlation), paste("p=", truncated_p_value))) + 
+       subtitle = paste(paste("r=", truncated_correlation), paste("p=", truncated_p_value))) + 
   ylab("Average VMax") +
   xlab("Relative Abundance") +
   theme_cowplot(12) +
@@ -118,7 +120,8 @@ spearman_vs_last_startle <- ggplot(correlate_microbiome, aes(Streptococcus,last_
         plot.subtitle =  element_text(hjust = 0.5)) 
 
 
-dat <- ggplot(correlate_microbiome, aes(Q22.x,Streptococcus, fill=Q22.x))+ 
+correlate_microbiome$Genotype <- factor(correlate_microbiome$Genotype,levels=c("WT","Q22"))
+dat <- ggplot(correlate_microbiome, aes(Genotype,Streptococcus, fill=Genotype))+ 
   geom_boxplot(alpha=0.25)+
   scale_fill_viridis_d()+
   geom_point(size=2,position=position_jitter(width=0.25),alpha=1)+

@@ -22,6 +22,7 @@ data<- merge(data,chao1, by="...1")
 data$SampleID <- data$...1
 
 metadata<- read.delim("Q22_Microbiome/starting_files/Q22_Metadata.tsv")
+metadata$Genotype <- revalue(metadata$Q22, replace = c("KO" = "Q22","WT"="WT"))
 colon_data_meta <- merge(data,metadata, by="SampleID")
 
 
@@ -39,6 +40,7 @@ data<- merge(data,chao1, by="...1")
 data$SampleID <- data$...1
 
 metadata<- read.delim("Q22_Microbiome/starting_files/Q22_Metadata.tsv")
+metadata$Genotype <- revalue(metadata$Q22, replace = c("KO" = "Q22","WT"="WT"))
 ileum_data_meta <- merge(data,metadata, by="SampleID")
 
 ### Function for plotting alpha diversity ---
@@ -47,7 +49,7 @@ generate_adiv_plots <- function(input_data, X, Y, min, max){
   data <- as.data.frame(input_data)
 
   #declare order of variables
-  data$Q22 <- factor(data$Q22, levels=c("WT", "KO"))
+  data$Genotype <- factor(data$Genotype, levels=c("WT", "Q22"))
   #graph plot
   ggplot(data=data,aes(x={{X}},y={{Y}}, fill=Q22)) + 
     geom_boxplot(alpha=0.25)+
@@ -61,23 +63,23 @@ generate_adiv_plots <- function(input_data, X, Y, min, max){
 }
 
 ### Make and store plots ---
-compare <-c("WT","KO")
+compare <-c("WT","Q22")
 
-adiv_colon_shannon<- generate_adiv_plots(colon_data_meta, Q22, shannon_entropy, 2, 7) +
-  stat_compare_means(comparisons = compare,method="wilcox", vjust=0.3,label="p.signif",step.increase=0.05)+
+adiv_colon_shannon<- generate_adiv_plots(colon_data_meta, Genotype, shannon_entropy, 2, 7) +
+  #stat_compare_means(comparisons = compare,method="wilcox", vjust=0.3,label="p.signif",step.increase=0.05)+
   ggtitle("Colon")+
   xlab("")+
   theme(plot.title = element_text(hjust = 0.5))
 adiv_colon_shannon
 
-adiv_colon_otus<- generate_adiv_plots(colon_data_meta, Q22, observed_features, 0, 300) +
-  stat_compare_means(comparisons = compare,method="wilcox", vjust=0.3,label="p.signif",step.increase=0.05)+
+adiv_colon_otus<- generate_adiv_plots(colon_data_meta, Genotype, observed_features, 0, 300) +
+  #stat_compare_means(comparisons = compare,method="wilcox", vjust=0.3,label="p.signif",step.increase=0.05)+
   ggtitle("Colon")+
   xlab("")+
   theme(plot.title = element_text(hjust = 0.5))
 adiv_colon_otus
 
-adiv_colon_chao1<- generate_adiv_plots(colon_data_meta, Q22, chao1, 0, 300) +
+adiv_colon_chao1<- generate_adiv_plots(colon_data_meta, Genotype, chao1, 0, 300) +
   stat_compare_means(comparisons = compare,method="wilcox", vjust=0.3,label="p.signif",step.increase=0.05)+
   ggtitle("chao1")+
   xlab("")+
@@ -85,23 +87,21 @@ adiv_colon_chao1<- generate_adiv_plots(colon_data_meta, Q22, chao1, 0, 300) +
 adiv_colon_chao1
 
 
-plot_grid(adiv_trios_shannon, adiv_trios_otus, adiv_trios_chao1, labels=c("A","B","C"),nrow=1)
-
-adiv_ileum_shannon<- generate_adiv_plots(ileum_data_meta, Q22, shannon_entropy, 2, 7) +
+adiv_ileum_shannon<- generate_adiv_plots(ileum_data_meta, Genotype, shannon_entropy, 2, 7) +
   stat_compare_means(comparisons = compare,method="wilcox", vjust=0.3,label="p.signif",step.increase=0.05)+
   ggtitle("Ileum")+
   xlab("")+
   theme(plot.title = element_text(hjust = 0.5))
 adiv_ileum_shannon
 
-adiv_ileum_otus<- generate_adiv_plots(ileum_data_meta, Q22, observed_features, 0, 300) +
+adiv_ileum_otus<- generate_adiv_plots(ileum_data_meta, Genotype, observed_features, 0, 300) +
   stat_compare_means(comparisons = compare,method="wilcox", vjust=0.3,label="p.signif",step.increase=0.05)+
   ggtitle("Ileum")+
   xlab("")+
   theme(plot.title = element_text(hjust = 0.5))
 adiv_ileum_otus
 
-adiv_ileum_chao1<- generate_adiv_plots(ileum_data_meta, Q22, chao1, 0, 300) +
+adiv_ileum_chao1<- generate_adiv_plots(ileum_data_meta, Genotype, chao1, 0, 300) +
   stat_compare_means(comparisons = compare,method="wilcox", vjust=0.3,label="p.signif",step.increase=0.05)+
   ggtitle("chao1")+
   theme(plot.title = element_text(hjust = 0.5))

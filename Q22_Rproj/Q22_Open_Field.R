@@ -5,7 +5,7 @@ library(viridis)
 library(tidyr)
 library(dplyr)
 
-data<-read.csv("../Q22 Open Field Analysis - Sheet1.csv", header=TRUE)
+data<-read.csv("Q22_Behavior/Q22 Open Field Analysis - Sheet1.csv", header=TRUE)
 data$SLC_Genotype<-data$SLC
 data$SLC_Genotype <- factor(data$SLC_Genotype, levels=c("WT", "HET", "MUT"))
 data$Q22 <- factor(data$Q22, levels=c("WT","KO"))
@@ -58,6 +58,7 @@ plot_grid(distance, centertime, labels=c("A","B"))
 
 ## Startle PPI on only SLC WT mice
 data_slcwt <- data %>% filter(SLC_Genotype=="WT")
+data_slcwt$Q22 <- revalue(data_slcwt$Q22, replace = c("KO" = "Q22","WT"="WT"))
 distance_slcwt <-generate_boxplots(data_slcwt, Q22, Distance,-30,85) +
   ggtitle("Distance in Open Field")+
   theme(plot.title = element_text(hjust = 0.5)) +

@@ -135,6 +135,8 @@ last_startle
 
 ## Startle PPI on only SLC WT mice
 data_slcwt <- data %>% filter(SLC_Genotype=="WT")
+data_slcwt$Q22 <- revalue(data_slcwt$Q22, replace = c("KO" = "Q22","WT"="WT"))
+
 summary(data_slcwt$X70db_Percent_Inhibition)
 db70_slcwt <-generate_boxplots(data_slcwt, Q22, X70db_Percent_Inhibition,-36,85) +
   ggtitle("70 db")+

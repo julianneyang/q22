@@ -253,6 +253,7 @@ generate_pcoA_plots <- function(distance_matrix, counts, metadata, title, colorv
     scale_colour_manual(name="",values={{colorvector}}) +
     theme_cowplot(12)+
     theme(legend.position="top",legend.justification = "center") +
+    theme(legend.background = element_rect(fill="lightblue", size=0.5, linetype="solid")) +
     theme(plot.title = element_text(hjust = 0.5)) +
     labs(title= paste0({{title}})) 
 p

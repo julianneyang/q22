@@ -5,14 +5,15 @@ library(dplyr)
 library(ggplot2)
 library(cowplot)
 library(viridis)
+library(plyr)
 
-setwd("C:/Users/Jacobs Laboratory/Documents/JCYang/q22/") # CHANGE to the directory containing the fastq files
+setwd("C://Users/Jacobs Laboratory/Documents/JCYang/q22") # CHANGE to the directory containing the fastq files
 here::i_am("Q22_Rproj/Q22_RS_Jensen_Shannon.R")
-
-metadata <- read.delim("Q22_Microbiome/starting_files/Q22_Metadata.tsv", header=TRUE)
+metadata <- read.delim("Q22_Microbiome/starting_files/Q22_Metadata.tsv",header=TRUE)
 metadata$SampleID <- gsub("-",".",metadata$SampleID)
 metadata$SampleID <- paste0("X","", metadata$SampleID)
-counts <- read.delim("Q22_Microbiome/starting_files/Q22_ASV.tsv", header = TRUE,row.names=1)
+metadata$Genotype <- revalue(metadata$Q22, replace = c("KO" = "Q22","WT"="WT"))
+counts <- read.delim("Q22_Microbiome/starting_files/Q22_ASV.tsv",header=TRUE, row.names=1)
 
 ## Apply minimum sequencing depth threshold --
 annotation$feature <- row.names(counts)
@@ -96,29 +97,27 @@ ileum_pcoa <- generate_pcoA_plots(distance_matrix=ileum.dist,
                                      counts = ileum_counts,
                                      metadata = ileum_meta,
                                      title="Ileum",
-                                     colorvariable = Q22,
+                                     colorvariable = Genotype,
                                      colorvector = cols,
                                      wa_scores_filepath = "Q22_Microbiome/beta_diversity/ileum_Top_Taxa_RSJ_PcoA.csv")
 ileum_pcoa
 
-cols <- c("WT"="black", "KO"="red")
 
 
 ileum_pcoa_roba <- generate_pcoA_plots(distance_matrix=ileum_dis,
                                   counts = ileum_counts,
                                   metadata = ileum_meta,
                                   title="Ileum",
-                                  colorvariable = Q22,
+                                  colorvariable = Genotype,
                                   colorvector = cols,
                                   wa_scores_filepath = "Q22_Microbiome/beta_diversity/ileum_Top_Taxa_Robust_Aitchison_PcoA.csv")
 ileum_pcoa_roba
 
-cols <- c("WT"="black", "KO"="red")
 colon_pcoa <- generate_pcoA_plots(distance_matrix=colon.dist,
                                      counts = colon_counts,
                                      metadata = colon_meta,
                                      title="Colon",
-                                     colorvariable = Q22,
+                                     colorvariable = Genotype,
                                      colorvector = cols,
                                      wa_scores_filepath = "Q22_Microbiome/beta_diversity/colon_Top_Taxa_PcoA.csv")
 colon_pcoa 
@@ -127,7 +126,7 @@ colon_pcoa_roba <- generate_pcoA_plots(distance_matrix=colon_dis,
                                   counts = colon_counts,
                                   metadata = colon_meta,
                                   title="Colon",
-                                  colorvariable = Q22,
+                                  colorvariable = Genotype,
                                   colorvector = cols,
                                   wa_scores_filepath = "Q22_Microbiome/beta_diversity/colon_Top_Taxa_Robust_AitchisonPcoA.csv")
 colon_pcoa_roba

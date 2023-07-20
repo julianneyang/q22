@@ -5,7 +5,7 @@ library(viridis)
 library(tidyr)
 library(dplyr)
 
-data<-read.csv("../OLM_Analysis - OLM_analysis.csv", header=TRUE)
+data<-read.csv("Q22_Behavior/OLM_Analysis - OLM_analysis.csv", header=TRUE)
 data$SLC_Genotype<-data$SLC
 data$SLC_Genotype <- factor(data$SLC_Genotype, levels=c("WT", "HET", "MUT"))
 data$Q22 <- factor(data$Q22, levels=c("WT","KO"))
@@ -86,6 +86,7 @@ plot_grid(olm_training,olm,
 
 ## Startle PPI on only SLC WT mice
 data_slcwt <- data %>% filter(SLC_Genotype=="WT")
+data_slcwt$Q22 <- revalue(data_slcwt$Q22, replace = c("KO" = "Q22","WT"="WT"))
 data_testing_slcwt <- data_slcwt %>% filter(Day=="Testing")
 olm_slcwt <-generate_boxplots(data_testing_slcwt, Q22, Discrimination_Ratio,-30,85) +
   ggtitle("Testing")+
