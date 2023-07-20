@@ -15,6 +15,8 @@ metadata$SampleID <- paste0("X","", metadata$SampleID)
 counts <- read.delim("Q22_Microbiome/starting_files/Q22_ASV.tsv", header = TRUE,row.names=1)
 
 ## Apply minimum sequencing depth threshold --
+annotation$feature <- row.names(counts)
+annotation$taxonomy <- counts$taxonomy
 counts <- counts %>% select(-c(taxonomy))
 summary(colSums(counts))
 counts <- counts[colSums(counts) >= 3000]
@@ -27,7 +29,7 @@ row.names(ileum_meta) <- ileum_meta$SampleID
 ileum <- ileum_meta$SampleID
 ileum_counts <- counts %>% select(all_of(ileum))
 
-# Mucosal Colon
+# Colon
 colon_meta <- metadata %>% filter(Site=="COL", SampleID %in% names(counts))
 row.names(colon_meta) <- colon_meta$SampleID
 colon <- colon_meta$SampleID
@@ -87,7 +89,7 @@ adonis2(colon_dis ~ Litter+Sex+Q22, data = meta)
 
 ## Principal Coordinates Analysis -- 
 
-cols <- c("WT"="black", "KO"="red")
+cols <- c("WT"="black", "Q22"="red")
 
 
 ileum_pcoa <- generate_pcoA_plots(distance_matrix=ileum.dist,
@@ -121,7 +123,7 @@ colon_pcoa <- generate_pcoA_plots(distance_matrix=colon.dist,
                                      wa_scores_filepath = "Q22_Microbiome/beta_diversity/colon_Top_Taxa_PcoA.csv")
 colon_pcoa 
 
-colon_pcoa_roba <- generate_pcoA_plots(distance_matrix=colon.dist,
+colon_pcoa_roba <- generate_pcoA_plots(distance_matrix=colon_dis,
                                   counts = colon_counts,
                                   metadata = colon_meta,
                                   title="Colon",
@@ -130,94 +132,8 @@ colon_pcoa_roba <- generate_pcoA_plots(distance_matrix=colon.dist,
                                   wa_scores_filepath = "Q22_Microbiome/beta_diversity/colon_Top_Taxa_Robust_AitchisonPcoA.csv")
 colon_pcoa_roba
 
-## PERMANOVA
-
-# Ileum
-data.dist<-ileum.dist
-metadata <- ileum_meta
-
-target <- row.names(data.dist)
-metadata = metadata[match(target, row.names(metadata)),]
-target == row.names(metadata)
-data.dist <- as.dist(as(data.dist, "matrix"))
-
-set.seed(11)
-data.adonis=adonis(data.dist ~ Litter+ Sex + Q22, data=metadata, permutations=10000)
-data.adonis$aov.tab
-
-# Mucosal Colon
-data.dist<-colon.dist
-metadata <- colon_meta
-
-target <- row.names(data.dist)
-metadata = metadata[match(target, row.names(metadata)),]
-target == row.names(metadata)
-data.dist <- as.dist(as(data.dist, "matrix"))
-
-set.seed(11)
-data.adonis=adonis(data.dist ~ Sex + Q22, data=metadata, permutations=10000)
-data.adonis$aov.tab
-
-# Luminal Colon -- no HET 
-data.dist<-lt_ileum.dist
-metadata <- nohet_lt_ileum_meta
-
-target <- row.names(data.dist)
-metadata = metadata[match(target, row.names(metadata)),]
-target == row.names(metadata)
-data.dist <- as.dist(as(data.dist, "matrix"))
-
-set.seed(11)
-data.adonis=adonis(data.dist ~ Sex + Site + Genotype, data=metadata, permutations=10000)
-data.adonis$aov.tab
-
-# Mucosal Colon -- no HET
-data.dist<-lt_muccol.dist
-metadata <- nohet_lt_muccol_meta
-
-target <- row.names(data.dist)
-metadata = metadata[match(target, row.names(metadata)),]
-target == row.names(metadata)
-data.dist <- as.dist(as(data.dist, "matrix"))
-
-set.seed(11)
-data.adonis=adonis(data.dist ~ Sex + Site + Genotype, data=metadata, permutations=10000)
-data.adonis$aov.tab
-
-
-## Repeat-Measures-Aware 
-# Luminal Colon
-site <- c("Site")
-mouseID <- c("Sex","Genotype","MouseID")
-order_vector <- c("Sex","Site","Genotype")
-run_repeated_PERMANOVA(ileum.dist,
-                       ileum_meta,
-                       site,
-                       mouseID,
-                       order_vector)
-site <- c("Site")
-mouseID <- c("Sex","Genotype","MouseID")
-order_vector <- c("Sex","Site","Genotype")
-run_repeated_PERMANOVA(lt_ileum.dist,
-                       nohet_lt_ileum_meta,
-                       site,
-                       mouseID,
-                       order_vector)
-
-# Mucosal Colon
-site <- c("Site")
-mouseID <- c("Sex","Genotype","MouseID")
-order_vector <- c("Sex","Site","Genotype")
-run_repeated_PERMANOVA(muccol.dist,
-                       muccol_meta,
-                       site,
-                       mouseID,
-                       order_vector)
-site <- c("Site")
-mouseID <- c("Sex","Genotype","MouseID")
-order_vector <- c("Sex","Site","Genotype")
-run_repeated_PERMANOVA(lt_muccol.dist,
-                       nohet_lt_muccol_meta,
-                       site,
-                       mouseID,
-                       order_vector)
+## View taxa with greatest influence 
+top_taxa <- read.csv("Q22_Microbiome/beta_diversity/ileum_Top_Taxa_Robust_Aitchison_PcoA.csv",header=TRUE)
+top_taxa$feature <- top_taxa$sample
+top_taxa <- merge(top_taxa, annotation, by="feature")
+print(top_taxa$taxonomy)

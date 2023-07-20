@@ -54,7 +54,7 @@ generate_adiv_plots <- function(input_data, X, Y, min, max){
     scale_fill_viridis_d()+
     #geom_line(aes(group = MouseID,color=Genotype),size=1)+
     geom_point(size=2,position=position_jitter(width=0.25),alpha=1)+
-    theme_cowplot(16) +
+    theme_cowplot(12) +
     #ylim(min,max) +
     theme(legend.position = "none")
   
