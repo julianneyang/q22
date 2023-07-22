@@ -110,17 +110,9 @@ adiv_ileum_chao1
 plot_grid(adiv_ileum_shannon, adiv_ileum_otus, adiv_ileum_chao1, labels=c("A","B","C"), nrow=1)
 
 ### Alpha Diversity Stats ---
-data_meta$Genotype <-factor(data_meta$Genotype, levels=c("WT", "HET","MUT"))
-output <- lme(fixed= shannon_entropy ~ Sequencing_Run + Sex + Site+ Genotype, random = ~1|MouseID, data=data_meta)
-summary(output)
-output <- lme(fixed= observed_features ~ Sequencing_Run +Sex+ Site+ Genotype, random = ~1|MouseID, data=data_meta)
-summary(output)
-output <- lme(fixed= chao1 ~ Sequencing_Run +Sex+ Site+ Genotype, random = ~1|MouseID, data=data_meta)
-summary(output)
+wilcox.test(shannon_entropy~Genotype,ileum_data_meta )
+wilcox.test(observed_features~Genotype,ileum_data_meta )
 
-output <- lme(fixed= shannon_entropy ~ Sequencing_Run + Site+ Sex*Genotype, random = ~1|MouseID, data=data_meta)
-summary(output)
-output <- lme(fixed= observed_features ~ Sequencing_Run +Sex+ Site+ Sex*Genotype, random = ~1|MouseID, data=data_meta)
-summary(output)
-output <- lme(fixed= chao1 ~ Sequencing_Run +Sex+ Site+ Sex*Genotype, random = ~1|MouseID, data=data_meta)
-summary(output)
+wilcox.test(shannon_entropy~Genotype,colon_data_meta )
+wilcox.test(observed_features~Genotype,colon_data_meta )
+

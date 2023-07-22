@@ -19,7 +19,7 @@ counts <- counts %>% select(-c("taxonomy"))
 
 ## Apply minimum sequencing depth threshold --
 counts <- counts[colSums(counts) >= 3000]
-
+summary(colSums(counts))
 ## Split counts into site subsets -- 
 
 # Colon 
